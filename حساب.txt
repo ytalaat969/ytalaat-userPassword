@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+string ytalaatusername;
+   string ytalaatpassword;
+    cout << "الرجاء إدخال اسم المستخدم: ";
+    getline(cin, ytalaatusername);
+
+    cout << "الرجاء إدخال كلمة المرور: ";
+    getline(cin, ytalaatpassword);
+   ofstream outputFile("account.txt");
+    if (outputFile.is_open()) {
+        outputFile << "اسم المستخدم: " << ytalaatusername << endl;
+        outputFile << "كلمة المرور: " << ytalaatpassword <<endl;
+        outputFile.close();
+        cout << "save scucs" <<endl;
+    } 
+else {
+        cout << "حدث خطأ في فتح الملف." << endl;
+    }
+
+    return 0;
+}
